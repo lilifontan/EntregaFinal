@@ -75,13 +75,13 @@ const eliminarProducto = (e) => {
     const productoBorrado = e.target.getAttribute('data-id')
     const producto = productos.find((producto) => producto.id == productoBorrado)
 
-    if (productoBorrado.Cantidad>1){
+    if (producto.cantidad>1){
     console.log("mayor a 1")
     producto.cantidad= producto.cantidad-1}
     
     else{
     carrito = carrito.filter((producto) => producto.id !=productoBorrado)}
-    
+
     localStorage.setItem('carrito',JSON.stringify(carrito))
     renderizarCarrito()  
     if (carrito.length == 0) {
